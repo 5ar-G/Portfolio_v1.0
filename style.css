@@ -1,0 +1,777 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  cursor: url("images/pointer.svg"), auto;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  display: block;
+  border-radius: 0;
+  mix-blend-mode: difference;
+  top: 0;
+  left: 0;
+  z-index: 9999999999999999;
+}
+
+.circle {
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.main_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: white;
+  overflow: hidden;
+}
+
+.invisible_cont-1 {
+  z-index: 2;
+  position: absolute;
+  bottom: 1rem;
+  height: 27rem;
+  width: 50rem;
+  background-color: white;
+}
+
+.invisible_cont-2 {
+  z-index: 3;
+  position: absolute;
+  bottom: 1rem;
+  height: 15rem;
+  width: 85rem;
+  background-color: white;
+}
+
+.floating-text-1 {
+  margin-top: 15rem;
+  z-index: 1;
+  font-family: "Ephesis", serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 8vw;
+  position: absolute;
+  animation: floatUp-1 1s ease-in-out forwards;
+}
+
+.floating-text-2 {
+  z-index: 2;
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 2.3rem;
+  position: absolute;
+  margin-top: 32rem;
+  animation: floatUp-2 1.4s ease-in-out forwards;
+  animation-delay: 0.6s;
+  user-select: none;
+}
+
+/* Keyframes for floating animation */
+@keyframes floatUp-1 {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-120%);
+  }
+}
+
+@keyframes floatUp-2 {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-150%);
+  }
+}
+
+.floating-text-1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: black;
+  transform: translateX(-50%);
+  animation: underlineExpand 2s ease-in-out forwards;
+}
+
+/* Keyframes for underline animation */
+@keyframes underlineExpand {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.curlly_arrow1 {
+  position: absolute;
+  margin-left: 30rem;
+}
+
+.aboutMe_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+}
+
+.aboutMe_page h1 {
+  z-index: 1;
+  font-family: "Lexend Deca", serif;
+  font-weight: 500;
+  font-size: 18rem;
+  color: black;
+  position: absolute;
+  transform: translateX(-160%);
+  animation: apear-from-left linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 70%;
+  user-select: none;
+}
+
+@keyframes apear-from-left {
+  0% {
+    transform: translateX(-130%);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateX(-22%);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+}
+
+.aboutMe_page p {
+  opacity: 1;
+  z-index: 2;
+  font-family: "Lexend Deca", serif;
+  font-weight: 300;
+  font-size: 2.3rem;
+  color: black;
+  position: absolute;
+  margin-bottom: 25rem;
+  transform: translateX(15%);
+  animation: apear-from-right linear;
+  animation-timeline: view();
+  animation-range: entry 10% cover 100%;
+  user-select: none;
+}
+
+@keyframes apear-from-right {
+  0% {
+    transform: translateX(15%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 0.3;
+  }
+}
+
+
+
+.btn {
+  display: inline-block;
+  padding: 1.5rem;
+  margin-left: 33.5vw;
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-size: 6rem;
+  margin-bottom: 10rem;
+  border: black solid 5px;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  box-shadow: .5vw .5vw 0 rgb(0, 0, 0), 0 1vw 4vw rgb(0, 0, 0);
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 0 rgb(0, 0, 0), 0 0vw 0vw rgb(0, 0, 0);
+  transform: translateX(.7vw) translateY(.7vw);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  user-select: none;
+}
+
+
+
+#project-1 #text {
+  float: left;
+  width: 50%;
+  height: 100%;
+  color: white;
+  z-index: 2;
+}
+
+#project-1 #text h2 {
+  text-align: left;
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 7rem;
+  margin-top: 14rem;
+  margin-bottom: 4rem;
+  margin-left: 4rem;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 15px;
+  border: black solid 5px;
+
+}
+
+#project-1 #text p {
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 2.3rem;
+  width: 70%;
+  margin-left: 4rem;
+  margin-bottom: 5rem;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 15px;
+  border: black solid 5px;
+
+}
+
+#project-1 #text span {
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: rgb(202, 202, 202);
+  margin-left: 4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#project-1 #text h2:hover,
+#project-1 #text p:hover {
+  box-shadow: .5vw .5vw 0 rgb(0, 0, 0), 0 1vw 4vw rgb(0, 0, 0);
+  border: white solid 5px;
+}
+
+#project-1 #text span:hover {
+  color: black;
+}
+
+#project-1 #text h2,
+#project-1 #text p,
+#project-1 #text span {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: revealText 1s ease-out forwards;
+}
+
+#project-1 #text h2::after,
+#project-1 #text p::after,
+#project-1 #text span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: left;
+  animation: revealBar 1s ease-out forwards;
+}
+
+#project-1 #text p {
+  animation-delay: 0.3s;
+}
+
+#project-1 #text p::after {
+  animation-delay: 0.3s;
+}
+
+#project-1 #text span {
+  animation-delay: 0.6s;
+}
+
+#project-1 #text span::after {
+  animation-delay: 0.6s;
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealBar {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+#project-1 #text span img {
+  margin-left: 22rem;
+  margin-top: -4rem;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+#project-1 #text span img:hover {
+  background-color: rgb(202, 202, 202);
+  box-shadow: 0px 0px 10px black;
+  cursor: url("images/icons8-hand-cursor.svg"), auto;
+
+}
+
+#project-1 .panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#project-1 .panel img {
+  margin-top: 25rem;
+  margin-right: 15rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+#project-2 #text {
+  float: left;
+  width: 50%;
+  height: 100%;
+  color: white;
+}
+
+#project-2 #text h2 {
+  text-align: left;
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 7rem;
+  margin-top: 14rem;
+  margin-bottom: 4rem;
+  margin-left: 4rem;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 15px;
+  border: black solid 5px;
+
+}
+
+#project-2 #text p {
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 2.3rem;
+  width: 70%;
+  margin-left: 4rem;
+  margin-bottom: 5rem;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 15px;
+  border: black solid 5px;
+
+}
+
+#project-2 #text span {
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: rgb(202, 202, 202);
+  margin-left: 4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#project-2 #text h2:hover,
+#project-2 #text p:hover {
+  box-shadow: .5vw .5vw 0 rgb(0, 0, 0), 0 1vw 4vw rgb(0, 0, 0);
+  border: white solid 5px;
+}
+
+#project-2 #text span:hover {
+  color: black;
+}
+
+#project-2 #text h2,
+#project-2 #text p,
+#project-2 #text span {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: revealText 1s ease-out forwards;
+}
+
+#project-2 #text h2::after,
+#project-2 #text p::after,
+#project-2 #text span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: left;
+  animation: revealBar 1s ease-out forwards;
+}
+
+#project-2 #text p {
+  animation-delay: 0.3s;
+}
+
+#project-2 #text p::after {
+  animation-delay: 0.3s;
+}
+
+#project-2 #text span {
+  animation-delay: 0.6s;
+}
+
+#project-2 #text span::after {
+  animation-delay: 0.6s;
+}
+
+
+
+#project-2 #text span img {
+  margin-left: 22rem;
+  margin-top: -4rem;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+#project-2 #text span img:hover {
+  background-color: rgb(202, 202, 202);
+  box-shadow: 0px 0px 10px black;
+  cursor: url("images/icons8-hand-cursor.svg"), auto;
+
+}
+
+#project-2 .panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+}
+
+#project-2 .panel img {
+  margin-top: 25rem;
+  margin-right: 15rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+
+
+
+#project-3 #text {
+  float: left;
+  width: 50%;
+  height: 100%;
+  color: white;
+}
+
+#project-3 #text h2 {
+  text-align: left;
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 7rem;
+  margin-top: 14rem;
+  margin-bottom: 4rem;
+  margin-left: 4rem;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+  padding-left: 1rem;
+  border-radius: 15px;
+  border: black solid 5px;
+
+}
+
+#project-3 #text p {
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 2.3rem;
+  width: 70%;
+  margin-left: 4rem;
+  margin-bottom: 5rem;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 15px;
+  border: black solid 5px;
+
+}
+
+#project-3 #text span {
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: rgb(202, 202, 202);
+  margin-left: 4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#project-3 #text h2:hover,
+#project-3 #text p:hover {
+  box-shadow: .5vw .5vw 0 rgb(0, 0, 0), 0 1vw 4vw rgb(0, 0, 0);
+  border: white solid 5px;
+}
+
+#project-3 #text span:hover {
+  color: black;
+}
+
+#project-3 #text h2,
+#project-3 #text p,
+#project-3 #text span {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: revealText 1s ease-out forwards;
+}
+
+#project-3 #text h2::after,
+#project-3 #text p::after,
+#project-3 #text span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: left;
+  animation: revealBar 1s ease-out forwards;
+}
+
+#project-3 #text p {
+  animation-delay: 0.3s;
+}
+
+#project-3 #text p::after {
+  animation-delay: 0.3s;
+}
+
+#project-3 #text span {
+  animation-delay: 0.6s;
+}
+
+#project-3 #text span::after {
+  animation-delay: 0.6s;
+}
+
+
+
+#project-3 #text span img {
+  margin-left: 22rem;
+  margin-top: -4rem;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+#project-3 #text span img:hover {
+  background-color: rgb(202, 202, 202);
+  box-shadow: 0px 0px 10px black;
+  cursor: url("images/icons8-hand-cursor.svg"), auto;
+
+}
+
+#project-3 .panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+}
+
+#project-3 .panel img {
+  margin-top: 25rem;
+  margin-right: 10rem;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.contact_btn {
+  display: inline-block;
+  padding: 1.5rem;
+  margin-top: 20vw;
+  margin-left: 33.5vw;
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-size: 6rem;
+  margin-bottom: 10rem;
+  border: black solid 5px;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  box-shadow: .5vw .5vw 0 rgb(0, 0, 0), 0 1vw 4vw rgb(0, 0, 0);
+}
+
+.contact_btn:hover {
+  box-shadow: 0px 0px 0 rgb(0, 0, 0), 0 0vw 0vw rgb(0, 0, 0);
+  transform: translateX(.7vw) translateY(.7vw);
+}
+
+.arrow {
+  position: absolute;
+  margin-left: 4rem;
+  margin-top: 35rem;
+}
+
+.container {
+  font-family: "Lexend Deca", serif;
+  font-optical-sizing: auto;
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: .5vw .5vw 0 rgb(0, 0, 0), 0 1vw 4vw rgb(0, 0, 0);
+  transition: all 0.3s ease-in-out;
+  border: 5px solid black;
+}
+
+.container:hover {
+  box-shadow: 0px 0px 0 rgb(0, 0, 0), 0 0vw 0vw rgb(0, 0, 0);
+  transform: translateX(.7vw) translateY(.7vw);
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+input,
+textarea {
+  font-size: 18px;
+  padding: 15px;
+  padding-left: 10px;
+  /* Space for the icon */
+  margin-bottom: 10px;
+  border: 3px solid #b1b1b1;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  border-color: black;
+  outline: none;
+}
+
+.input-wrapper i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #888;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 15px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  border: 3px solid black;
+  box-shadow: .4vw .4vw 0 rgb(255, 255, 255), 0 1vw 4vw rgb(0, 0, 0);
+}
+
+button:hover {
+  box-shadow: .3vw .3vw 0 rgb(255, 255, 255), 0 .3vw 2vw rgb(0, 0, 0);
+  transform: translateX(.3vw) translateY(.3vw);
+  cursor: url("images/icons8-hand-cursor.svg"), auto;
+
+}
+
+button:active {
+  box-shadow: 0px 0px 0 rgb(0, 0, 0), 0 0vw 0vw rgb(0, 0, 0);
+  transform: translateX(.4vw) translateY(.4vw);
+}
